@@ -1,6 +1,6 @@
-import mysql from 'mysql2'
+import mysql from 'mysql2/promise'
 
-const pool  = mysql.createPool({
+const promisePool  = mysql.createPool({
     host: `localhost`,
     user: `root`,
     port:`3306`,
@@ -8,8 +8,6 @@ const pool  = mysql.createPool({
     database:`7ctech`,
 });
 
-const promisePool = pool.promise();
-
-
+//const promisePool = pool.promise();
 
 export {promisePool}

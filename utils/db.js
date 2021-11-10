@@ -19,9 +19,6 @@ if(!pool){
 }
 
 const executeQuery = async(query, arraParms) => {
-
-   
-
     return new Promise((resolve, reject) => {
         try {
             pool.query(query,arraParms, (err,data) => {

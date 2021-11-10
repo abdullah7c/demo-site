@@ -15,9 +15,15 @@ export default blogs
 
 export async function getStaticProps() {
     
-    const [row,fields] = await promisePool.query("SELECT * FROM blogData");
-    const stringifiedData = safeJsonStringify(row)
-    const data = JSON.parse(stringifiedData)
+    let data = []
+
+    try {
+      const [row,fields] = await promisePool.query("SELECT * FROM blogData");
+      const stringifiedData = safeJsonStringify(row)
+       data = JSON.parse(stringifiedData)
+    } catch (error) {
+       
+    }
 
     if (!data) {
       return {

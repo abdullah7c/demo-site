@@ -13,9 +13,15 @@ export default blog
 
 export async function getStaticPaths() {
 
+  let data = []
+
+  try {
     const [row,fields] = await promisePool.query("SELECT * FROM blogData");
     const stringifiedData = safeJsonStringify(row)
-    const data = JSON.parse(stringifiedData)
+     data = JSON.parse(stringifiedData)
+  } catch (error) {
+     
+  }
 
     const paths = data.map(blog => {
         return {
@@ -32,9 +38,15 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const id = context.params.id;
     
-    const [row,fields] = await promisePool.query(`select * from blogdata where slug='${id}'`);
-    const stringifiedData = safeJsonStringify(row)
-    const data = JSON.parse(stringifiedData)
+    let data = []
+
+    try {
+      const [row,fields] = await promisePool.query(`select * from blogdata where slug='${id}'`);
+      const stringifiedData = safeJsonStringify(row)
+      data = JSON.parse(stringifiedData)
+    } catch (error) {
+      
+    }
 
     //const blogs = await getBlogs();
 
