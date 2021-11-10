@@ -1,13 +1,24 @@
-import mysql from 'mysql2/promise'
+import mysql from 'mysql2'
 
-const promisePool  = mysql.createPool({
-    host: `localhost`,
-    user: `root`,
-    port:`3306`,
-    password: '',
-    database:`7ctech`,
-});
+let promisePool; 
 
-//const promisePool = pool.promise();
+async function connection (){
+    let promisePoolVar;
+    try {
+        const pool = await mysql.createPool({
+            host: `localhost`,
+            user: `root`,
+            port:`3306`,
+            password: '',
+            database:`7ctech`,
+        });
+        promisePoolVar = pool.promise();
+        promisePool = promisePoolVar
+    } catch (error) {
+        throw error
+    }
+    
+}
 
+connection()
 export {promisePool}

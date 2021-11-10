@@ -20,7 +20,7 @@ export async function getStaticPaths() {
     const stringifiedData = safeJsonStringify(row)
      data = JSON.parse(stringifiedData)
   } catch (error) {
-     
+    throw error
   }
 
     const paths = data.map(blog => {
@@ -45,7 +45,7 @@ export async function getStaticProps(context) {
       const stringifiedData = safeJsonStringify(row)
       data = JSON.parse(stringifiedData)
     } catch (error) {
-      
+      throw error
     }
 
     //const blogs = await getBlogs();
