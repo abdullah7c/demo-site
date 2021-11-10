@@ -1,0 +1,162 @@
+.about-styles{
+    .hero-image {
+        background-image: linear-gradient(rgba(105, 105, 105, 0.185), rgba(97, 97, 97, 0.507)), url('/about-back.jpg');
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        color: aliceblue;
+    }
+    .hero-text-middle{
+        font-size: 50px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .hero-text-top{
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .btn-custom{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-weight: 500;
+        font-size: 20px;
+        color: ivory;
+        border: 3px solid ivory;
+        background-color: transparent;
+    }
+
+    .about-what{
+        background-color: rgb(51, 49, 68);
+    }
+
+    .mission{
+        color: #fff;
+        font-weight: 700;
+        font-size: 35px;
+    }
+    
+    .statement{
+        color: rgb(188, 198, 205);
+        font-size: 23px;
+        font-weight: 200;
+    }
+    
+    .quote{
+        float: right;
+    }
+
+    .black-light{
+        font-size: 55px;
+        font-weight: 300;
+        color: rgb(95, 94, 93);
+    }
+
+    .white-light{
+        font-size: 55px;
+        font-weight:100;
+        color: #fff;
+    }
+
+    .blue-dark{
+        font-size: 55px;
+        font-weight: 700;
+        color: #21a3df;
+    }
+
+    .about-tag{
+        font-size: 25px;
+    }
+
+    .about-mid-text{
+        font-size: 15px;
+        font-weight: 400;
+        color: rgb(95, 114, 127);
+    }
+    .best-services{
+        background-image: url('/about-services-back.jpg');
+    }
+    .best-service > .icon{
+            font-size: 70px;
+            color: rgba(218, 165, 32, 0.527);
+    }
+
+    .best-service:hover > .icon{
+        font-size: 70px;
+        color: rgb(146, 111, 22);
+        background-color: rgba(255, 255, 255, 0.692);
+        border-radius: 45px;
+}
+    .best-service> .service-head{
+        color: #fff;
+    }
+    .best-service:hover > .service-head{
+        color: rgb(255, 195, 44);
+        transition-duration: 900ms;
+    }
+
+    .best-service> .service-desc{
+        color: rgb(190, 190, 190);
+    }
+    .best-service > .service-btn{
+        background-color: rgba(0, 0, 0, 0.603);
+        color: rgb(226, 226, 226);
+        font-size: 15px;
+        font-weight: 700;
+        border: none;
+        border-radius: 5px;
+    }
+    .best-service:hover > .service-btn{
+        transition-duration: 900ms;
+        background-color: rgb(228, 177, 48);
+        color: rgb(226, 226, 226);
+        font-size: 15px;
+        font-weight: 700;
+        border: none;
+        border-radius: 5px;
+    }
+    .values{
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .value-icon{
+        background-color: rgb(228, 177, 48);
+        border-radius: 55px;
+        width: 70px;
+        height: 70px;
+        padding: 20px;
+        padding-right: 10px;
+        margin: 10px;
+    }
+
+
+    .values-back{
+        background-color: rgb(228, 177, 48);
+        border-radius: 55px;
+        width: 70px;
+    }
+    .values-heading{
+        color: #21a3df;
+    }
+
+    .black-dark-large{
+        font-size: 50px;
+    }
+    .team-block{
+        border: 1px solid rgba(128, 128, 128, 0.219);
+        background-color: #f4f6f7;
+    }
+    .team-block:hover{
+        background-color: #fff;
+        cursor: pointer;
+    }
+    .mail{
+        text-decoration: none;
+    }
+}

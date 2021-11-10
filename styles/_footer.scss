@@ -1,0 +1,82 @@
+.footer-styles{
+
+    .footer{
+        background-color: rgb(33,35,49);
+      }
+      
+      .footer-white-light{
+        color: ivory;
+        font-size: 28px;
+        font-weight: 700;
+      }
+      .footer-blog{
+        border-radius: 55px;
+        height: 80px;
+        width: 80px;
+        color: white;
+      }
+      .footer-blog-content{
+        color: rgb(137, 169, 181);
+        font-size: 12px;
+        text-decoration: none;
+      }
+      .field{
+        width: 250px;
+        border: 1px solid silver;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 10px;
+        border-radius: 5px;
+      }
+      .footer-form > .field{
+        background-color:rgba(27, 27, 49, 0.534);
+        color: ivory ;
+      }
+      
+      .footer-end{
+        background-color: rgb(28, 26, 44);
+      }
+      .links{
+        color: rgb(137, 169, 181);
+      }
+      
+      .copyright{
+        font-size: 14px;
+        color: grey;
+      }
+      .copyright-nav{
+        font-size: 16px;
+        color: grey;
+      }
+      .copyright-a{
+        text-decoration: none;
+        color: grey;
+      }
+      @media screen and (max-width: 812px) {
+        .middle{
+          text-align: center;
+        }
+        .move-left-a{
+          margin-left: 70px;
+        }
+        .disappear{
+          display: none;
+        }
+        .move-left-a{
+          margin-left: 70px;
+        }
+        .move-left-b{
+          margin-left: 38px;
+        }
+      }
+
+      .blog-list{
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .blog-list > hr {
+        color: blanchedalmond;
+      }
+      
+      
+}

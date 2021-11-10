@@ -1,0 +1,79 @@
+.blogs-style{
+    .hero{
+        background-image:url('/service-back.jpg');
+        
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .heading{
+        color: #fff;
+        font-size: 50px;
+    }
+    .heading-blog{
+        color: #fff;
+        font-size: 40px;
+        letter-spacing: 0rem;
+    }
+
+    .blog-btn-custom{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-weight: 500;
+        font-size: 12px;
+        color: #21a3df;
+        border: 2px solid #21a3df;
+        background-color: transparent;
+    }
+    .blog-btn-custom:hover{
+        background-color: #21a3df;
+        color: #fff;
+    }
+    .text-editor {
+        width: auto;
+        margin: 0 auto;
+    }
+    .ql-editor {
+    min-height: 100px;
+    }
+
+    .recent-blog{
+        background-color: rgb(231, 231, 231);
+        border-top: 1px solid silver;
+        color: grey;
+        cursor: pointer;
+    }
+    .recent-blog-title:hover{
+        color: steelblue;
+    }
+
+    .recent-blog-title{
+        font-size: 13px;
+        text-decoration: none;
+        color: grey;
+    }
+
+    .not-liked:hover{
+        transition-duration: 200ms;
+        color: rgb(129, 18, 18);
+        font-size: 120%;
+    }
+    .liked{
+        color: rgb(129, 18, 18);
+        font-size: 120%;
+    }
+      
+    .blog-image{
+        height:420px;
+        width:750px;
+    }
+
+    @media screen and (max-width: 812px) {
+        .blog-image{
+            height:220px;
+            width:400px;
+        }
+    }
+}

@@ -1,0 +1,222 @@
+.home-styles{
+    .hero-image {
+        background-image: linear-gradient(rgba(105, 105, 105, 0.185), rgba(117, 117, 117, 0.13)), url('/back.jpg');
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        color: aliceblue;
+    }
+    @media screen and (max-width: 360px) {
+        .hero-image {
+            background-position:left;
+        }
+      }
+    .hero-text-top{
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .hero-text-middle{
+        font-size: 50px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .service-btn-area{
+        text-align: center;
+    }
+    .service-btn{
+        border-radius: 25px!important;
+        font-size: 20px!important;
+        padding-right: 25px!important;
+        padding-left: 25px!important;
+        font-weight: 500!important;
+        color: aliceblue!important;
+    }
+    .space{
+        padding-top: 150px;
+        padding-bottom: 250px;
+    }
+    .empty-space{
+        margin-bottom: 80px;
+    }
+    
+    .home-text-v1{
+        font-size: 45px;
+        color: rgb(95, 94, 93);
+        font-weight: 300;
+    }
+    .home-text-v2{
+        font-family: Segoe UI,Arial,sans-serif;
+        font-size: 45px;
+        color: #21a3df;
+        font-weight: 700;
+    }
+    .home-text-para{
+        color:  rgb(95, 94, 93);
+        font-weight: 400;
+        line-height: 25px;
+        justify-content: center;
+        text-align: left;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .home-text-para::first-letter{
+        color:  #21a3df;
+        font-size: 50px;
+        float: left;
+        font-weight: 600;
+    }
+    .home-what{
+        background-color: rgba(224, 224, 224, 0.699);
+    }
+    
+    .home-choose-card > .heading{
+        font-size: 30px;
+        font-weight: 300;
+        color:  rgb(95, 94, 93);
+    }
+    .home-choose-card > .content{
+        font-size: 18px;
+        font-weight: 300;
+        color:  rgb(95, 94, 93);
+    }
+    
+    .home-services{
+        background-image: url("https://res.cloudinary.com/seven-ctech/image/upload/v1625580645/website-Images/services_bg_pic_ymzwlx.png"); /* The image used */
+        background-color: #ffffff; /* Used if the image is unavailable */
+        margin-bottom: 0px !important;
+        padding-bottom: 200px !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        line-height: 25px;
+    }
+    .bar-back{
+        background-color: ivory;
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+    }
+    
+    .white-light{
+        font-size: 55px;
+        font-weight: 300;
+        color: ivory;
+    }
+    .white-dark{
+        font-size: 55px;
+        font-weight: 700;
+        color: ivory;
+    }
+    
+    .service > .heading{
+        color: ivory;
+        font-size: 23px;
+        font-weight: 500;
+    }
+    .service > .content{
+        color: ivory;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    .black-light{
+        font-size: 55px;
+        font-weight: 300;
+        color: rgb(95, 94, 93);
+    }
+    .blue-dark{
+        font-size: 55px;
+        font-weight: 700;
+        color: #21a3df;
+    }
+    
+    .client > .heading{
+        color: rgb(95, 94, 93);
+        font-size: 23px;
+        font-weight: 500;
+    }
+    .client > .content{
+        color: rgb(95, 94, 93);
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .client-name{
+        color: #21a3df;
+        font-weight: 500;
+    }
+    .client-position{
+        font-size: 12px;
+        color: rgb(95, 94, 93);
+    }
+    .quote{
+        color:#21a3df8c;
+        font-size:13px;
+    }
+    
+    .white{
+        color: ivory;
+        font-size: 20px;
+        font-weight: 300;
+    }
+    
+    .blog-bg{
+        background-color: rgb(240, 243, 242);
+    }
+    
+    .blog-btn-custom{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-weight: 500;
+        font-size: 12px;
+        color: #21a3df;
+        border: 2px solid #21a3df;
+        background-color: transparent;
+    }
+    .blog-btn-custom:hover{
+        transition-delay: 100ms;
+        transition-duration: 500ms;
+        background-color: #21a3df;
+        color: white;
+    }
+    .home-contact{
+        background-image:  url('/globe-bg.jpg');
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        color: aliceblue;
+    }
+    
+    .blue-medium-dark{
+        font-size: 35px;
+        font-weight: 650;
+        color: #21a3df;
+    }
+    .links > li{
+        color: darkgrey;
+    }
+    .links > li:hover{
+        color: rgb(104, 104, 104);
+    }
+    .links > li > .blue:hover{
+        color: rgb(104, 104, 104);
+    }
+    .blue{
+        color: #21a3df;
+        cursor: pointer;
+    }
+    .home-submit{
+        background-color: #21a3df!important;
+        color: ivory!important;
+        border: none!important;
+        padding-right: 30px!important;
+        padding-left: 30px!important;
+    }
+}

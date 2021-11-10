@@ -1,0 +1,148 @@
+.contact-styles{
+    .hero{
+        background-image:url('/service-back.jpg');
+        
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .heading{
+        color: #fff;
+        font-size: 50px;
+    }
+    .brand{
+        font-family: Verdana,sans-serif;
+        font-weight: 500;
+    }
+    .contact-form  {
+        height: 50px!important;
+    }
+    .content{
+        color: gray;
+        font-size: 15px;
+    }
+    .social{
+        color: rgb(48, 100, 197);
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 812px) {
+        .contact-links{
+            text-align: center;
+        }   
+      }
+    .home-contact{
+        background-image:  url('/globe-bg.jpg');
+        height: 100%;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        color: aliceblue;
+    }
+    
+    .white-medium-dark{
+        font-family: Verdana,sans-serif;
+        font-size: 50px;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    .team-block{
+        border: 1px solid rgba(128, 128, 128, 0.219);
+        background-color: #f4f6f7;
+    }
+    .team-block:hover{
+        background-color: #fff;
+        cursor: pointer;
+    }
+    .mail{
+        font-size: 14px;
+        text-decoration: none;
+    }
+    .video{
+        height: 500px;
+        background-color: black;
+        border: none;
+    }
+
+
+    .vidContainer{
+        background-color: rgba(33 , 35 , 49 , 0.7); ;
+        min-height:600px;
+        position:relative;
+        padding: 0px !important;
+    }
+    
+    .vid_div{
+        height: 100vh;
+        position: absolute; 
+        padding: 0px;
+        top: 0; 
+        left:0;
+        z-index: -1;
+    }
+    
+    .vidDiv_content{
+        position:absolute;
+        width: 100%;
+        top: 15%;
+    }
+    
+    .vid_div_write_btn {
+      border: solid 1px white;
+      padding: 10px;
+      width: 200px;
+      font-size: large;
+      letter-spacing: 0.05em;
+      height: 50px;
+      background-color: transparent;
+      color: white;
+    }
+    @media screen and (max-width: 812px) {
+        .vid_div_write_btn{
+            
+        }
+      }
+    
+    .vid_div_write_btn:hover{
+        text-decoration: none;
+        color :white
+    }
+    
+    .vid_div_submit_btn {
+        border: solid 1px white;
+        padding: 10px;
+        width: 200px;
+        font-size: large;
+        font-family: 'Times New Roman', Times, serif;
+        letter-spacing: 0.05em;
+        height: 50px;
+        background-color: transparent;
+        color: white;
+      }
+    
+    .vid_div_submit_btn:hover {
+        background-color: #21a3df;
+    }
+    
+    .vid_div_write_btn:hover {
+      background-color:  #21a3df ;
+    }
+    .white-big{
+        font-size: 45px;
+        color:#fff;
+    }
+    .blue-icon{
+        color: #21a3df;
+        font-size: 65px;
+    }
+    .white-small{
+        font-size: 16px;
+        color:#fff;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
