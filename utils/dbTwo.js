@@ -6,11 +6,12 @@ async function connection (){
     let promisePoolVar;
     try {
         const pool = await mysql.createPool({
-            host: `localhost`,
-            user: `root`,
+            host: `sql6.freesqldatabase.com`,
+            user: `sql6450414`,
             port:`3306`,
-            password: '',
-            database:`7ctech`,
+            password: 'micDmdq8HB',
+            database:`sql6450414`,
+    
         });
         promisePoolVar = pool.promise();
         promisePool = promisePoolVar

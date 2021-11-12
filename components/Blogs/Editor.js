@@ -15,11 +15,13 @@ export const Editor = (props) => {
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
 
-  useEffect(async() => {
-    await setBlog(props.blog)
-    
+  useEffect(() => {
+    async function getData(){
+      await setBlog(props.blog)
+    }
+    getData();
     return () => setBlog('')
-  }, [])
+  }, [props.blog])
 
   const showBlog = () =>{
     fetch(`/api/blogs/${props.id}`, {

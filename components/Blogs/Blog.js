@@ -28,11 +28,12 @@ const Blog = ({data}) => {
     const [Liked,setLiked] = useState(false)
 
     useEffect(async() => {
-        await localStorage.getItem(`liked${data[0].id}`)?setLiked(true):setLiked(false)
+        async function doSomething(){
+            await localStorage.getItem(`liked${data[0].id}`)?setLiked(true):setLiked(false)
 
         if(session){
-            Router.reload()
-        }
+                Router.reload()
+            }
 
         await setBlog(data[0])
         await setLikes(data[0].likes)
@@ -41,6 +42,8 @@ const Blog = ({data}) => {
             changePage(slug)
             //await Router.push(`/blogs/${slug}`)
         }
+    }
+    doSomething()
        
     }, [slug])
 

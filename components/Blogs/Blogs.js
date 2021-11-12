@@ -29,7 +29,7 @@ const Blogs = ({data}) => {
     }
     useEffect(()=>{
         setBlogData(data)
-    },[])
+    },[data])
     return (
         <div>
             <div className="blogs-style">

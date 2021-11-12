@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   let data = []
 
   try {
-    const [row,fields] = await promisePool.query("SELECT * FROM blogData");
+    const [row,fields] = await promisePool.query("SELECT * FROM blogdata");
     const stringifiedData = safeJsonStringify(row)
      data = JSON.parse(stringifiedData)
   } catch (error) {
