@@ -130,8 +130,7 @@ const Blog = ({data}) => {
                     </Row>}
                     {session &&  <Row className="justify-content-center my-5">
                         <Col md={7}>
-
-                        <Row><Col><img style={{height:"420px",width:"750px"}} src={`${blog.imgurl}`} alt="blog" /></Col></Row>
+                        <Row><Col><img className="blog-image" src={`${blog.imgurl}`} alt="blog" /></Col></Row>
                         <Row className="justify-content-end">
                             <Col md={12} >
                                 <span>By {blog.createdBy} | {(blog.createdAt?(blog.createdAt).substring(0, 10):null)}</span>
