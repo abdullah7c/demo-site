@@ -39,7 +39,7 @@ const Upload = (props) => {
         <div>
             <div>
                 <input type="file" onChange={(e) => setImage(e.target.files[0])}></input>
-                <button onClick={uploadImage}>Upload</button>
+                <button className="my-2 btn btn-primary" onClick={uploadImage}>Upload</button>
             </div>
             <div>
                 {/* <img src={url} /> */}
