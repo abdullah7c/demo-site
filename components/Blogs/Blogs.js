@@ -47,7 +47,7 @@ const Blogs = ({data}) => {
                 {
                     session &&
                     <Row className="justify-content-center my-5">
-                        <Col md="auto">
+                        <Col xs="auto" md="auto">
                             <AddBlog/>
                             <Modal
                                 size="sm"
