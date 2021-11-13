@@ -42,7 +42,7 @@ const Upload = (props) => {
                 <button className="my-2 btn btn-primary" onClick={uploadImage}>Upload</button>
             </div>
             <div>
-                {/* <img src={url} /> */}
+            <img height={100} src={url} />
             </div>
         </div>
     )
