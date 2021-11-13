@@ -3,6 +3,7 @@ import Blogs from '../../components/Blogs/index'
 import safeJsonStringify from 'safe-json-stringify';
 import { promisePool } from '../../utils/dbTwo';
 
+
 const blogs = ({data}) => {
     return (
         <div>
