@@ -32,7 +32,7 @@ const Main = () => {
         <Row className="justify-content-center">
           <Col md={4}>
               <div className="hero-text-middle">
-                BUSINESSes
+                BUSINESS
                 INFORMATION
                 SYSTEMS
               </div>
