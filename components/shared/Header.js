@@ -5,11 +5,14 @@ import Link from 'next/link'
 import aos from 'aos'
 import 'aos/dist/aos.css'
 import Router from 'next/router'
-
+import { useSession, signIn, signOut } from "next-auth/react"
 const Header = () => {
 
     const [showList,setShowList] = useState(false)
     
+    const { data: session, status } = useSession()
+    const isUser = !!session?.user
+
     useEffect(() => {
         aos.init({duration:500});
         
@@ -72,6 +75,11 @@ const Header = () => {
                 <Nav className="navLink"><Link href="/outsource"><a className="nav mx-3">OUTSOURCE</a></Link></Nav>
                 <Nav className="navLink"><Link href="/blogs"><a className="nav mx-3">BLOGS</a></Link></Nav>
                 <Nav className="navLink"><Link href="/contact"><a className="nav mx-3">CONTACT US</a></Link></Nav>
+                <Nav>
+                    {
+                        session ?(<button className="btn btn-primary" onClick={() => signOut()}>Log out</button>) : (<></>)
+                    }
+                </Nav>
                 </Nav>
             </Navbar.Collapse>
             </Container>
