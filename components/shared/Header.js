@@ -75,9 +75,9 @@ const Header = () => {
                 <Nav className="navLink"><Link href="/outsource"><a className="nav mx-3">OUTSOURCE</a></Link></Nav>
                 <Nav className="navLink"><Link href="/blogs"><a className="nav mx-3">BLOGS</a></Link></Nav>
                 <Nav className="navLink"><Link href="/contact"><a className="nav mx-3">CONTACT US</a></Link></Nav>
-                <Nav>
+                <Nav className="navLink mx-5">
                     {
-                        session ?(<button className="btn btn-primary" onClick={() => signOut()}>Log out</button>) : (<></>)
+                        session ?(<button className="mx-5 btn btn-primary" onClick={() => signOut()}>Log out</button>) : (<></>)
                     }
                 </Nav>
                 </Nav>
