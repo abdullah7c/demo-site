@@ -4,7 +4,7 @@ import Blogs from './Blogs'
 const index = ({data}) => {
     return (
         <div>
-            <Blogs data = {data} />
+            <Blogs data={data} />
         </div>
     )
 }

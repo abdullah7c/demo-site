@@ -74,8 +74,8 @@ const Blogs = ({data}) => {
                             <Card>
                                 <img  src={`${blog.imgurl}`} alt="blog" height="165" />
                                     <Card.Body>
-                                    <Card.Title style={{minHeight:"65px",fontSize:"18px"}}>{blog.createdAt.slice(0, 10)}:  {blog.title}</Card.Title>
-                                        <div style={{fontSize:"15px",height:"110px"}}>{ReactHtmlParser(blog.content.slice(0, 90))}</div>
+                                    <Card.Title style={{minHeight:"65px",fontSize:"16px"}}>{blog.createdAt.slice(0, 10)} : {blog.title}</Card.Title>
+                                        <div style={{fontSize:"13px",color:"grey",height:"110px"}}>{ReactHtmlParser(blog.content.slice(0, 160))}</div>
                                         <div className="center-responsive">
                                             <button onClick={()=>Router.push(`/blogs/`+blog.slug)} className="blog-btn-custom"> READ MORE</button>
                                             {

@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useEffect,useState, useContext} from 'react'
 import {BlogContext} from '../../context/BlogContextProvider'
 
 import Image from 'next/image'
@@ -12,7 +12,12 @@ import Router from 'next/router'
 
 const Footer = () => {
 
-    const blogs = useContext(BlogContext)||[]
+    const blogState = useContext(BlogContext)||[]
+    const [blogs, setBlogs] = useState([])
+
+    useEffect(() => {
+      setBlogs(blogState)
+    }, [blogState])
 
     return (
         <div className="footer-styles">

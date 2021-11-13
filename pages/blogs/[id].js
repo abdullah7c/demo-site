@@ -1,6 +1,5 @@
 import Blog from "../../components/Blogs/Blog"
-import safeJsonStringify from 'safe-json-stringify';
-import { promisePool } from '../../utils/dbTwo';
+import {executeQuery} from '/utils/db'
 
 const blog = ({data,blogsData}) => {
     return (
@@ -16,12 +15,12 @@ export async function getStaticPaths() {
   let data = []
 
   try {
-    const [row,fields] = await promisePool.query("SELECT * FROM blogdata");
-    const stringifiedData = safeJsonStringify(row)
-     data = JSON.parse(stringifiedData)
-  } catch (error) {
-    throw error
-  }
+    const result = await executeQuery({
+      query: 'SELECT * FROM blogdata',
+    })
+    const res = await JSON.stringify(result)
+    data = await JSON.parse(res)
+  } catch ( error ) { console.log( error );}
 
     const paths = data.map(blog => {
         return {
@@ -41,14 +40,12 @@ export async function getStaticProps(context) {
     let data = []
 
     try {
-      const [row,fields] = await promisePool.query(`select * from blogdata where slug='${id}'`);
-      const stringifiedData = safeJsonStringify(row)
-      data = JSON.parse(stringifiedData)
-    } catch (error) {
-      throw error
-    }
-
-    //const blogs = await getBlogs();
+      const result = await executeQuery({
+        query: `select * from blogdata where slug='${id}'`,
+      })
+      const res = await JSON.stringify(result)
+      data = await JSON.parse(res)
+    } catch ( error ) { console.log( error );}
 
 
     if (!data) {

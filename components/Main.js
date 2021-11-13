@@ -1,4 +1,4 @@
-import React,{useContext, useEffect} from 'react'
+import React,{useContext, useEffect, useState} from 'react'
 import Image from 'next/image'
 import {Container,Row,Col,Button,Card,Form} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,7 +12,12 @@ import Hear from './shared/Hear'
 const Main = () => {
 
 
-    const blogs = useContext(BlogContext)||[]
+    const blogState = useContext(BlogContext)||[]
+    const [blogs, setBlogs] = useState([])
+
+    useEffect(() => {
+      setBlogs(blogState)
+    }, [blogState])
 
     return (
     <div className="home-styles" >
@@ -216,13 +221,10 @@ const Main = () => {
                   <Card>
                   <img  src={blog.imgurl} alt="blog"  height={165} />
                     <Card.Body>
-                      <Card.Title>{blog.title}</Card.Title>
-                      <Card.Text>
-                      {ReactHtmlParser(blog.content.slice(0, 90))}
+                      <Card.Title style={{maxHeight:"60px",fontSize:"16px"}}>{blog.title}</Card.Title>
+                      <Card.Text style={{maxHeight:"80px",minHeight:"59px",fontSize:"13px"}}>
+                      <div className="my-3">{ReactHtmlParser(blog.content.slice(0, 90))}</div>
                       </Card.Text>
-                    </Card.Body>
-                    
-                    <Card.Body >
                       <button onClick={()=>Router.push(`/blogs/${blog.slug}`)} className="blog-btn-custom"> READ MORE</button>
                     </Card.Body>
                   </Card>

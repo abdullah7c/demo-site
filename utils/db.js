@@ -1,40 +1,22 @@
-import { createPool } from 'mysql'
+import mysql from 'serverless-mysql';
 
-const pool = createPool({
-    host: `sql6.freesqldatabase.com`,
-    user: `sql6450414`,
-    port:`3306`,
-    password: 'micDmdq8HB',
-    database:`sql6450414`,
-    
-})
+const db = mysql({
+  config: {
+    host: 'sql6.freesqldatabase.com',
+    port: '3306',
+    database: 'sql6450414',
+    user: 'sql6450414',
+    password: 'micDmdq8HB'
+  }
+});
 
-if(!pool){
-    pool.getConnection((err) => {
-        if(err){
-            console.log('Error in connection')
-        }
-        console.log("Connected!")
-    })
-}
-
-const executeQuery = async(query, arraParms) => {
-    return new Promise((resolve, reject) => {
-        try {
-            pool.query(query,arraParms, (err,data) => {
-                if (err) {
-                    console.log(err);
-                    reject(err);
-                }
-                resolve(data);
-            })
-            
-        } catch (error) {
-            reject(err)
-        }
-    })
-    
-}
-
-
-export {executeQuery, pool}
+async function executeQuery({ query, values }) {
+    try {
+      const results = await db.query(query, values);
+      await db.end();
+      return results;
+    } catch (error) {
+      return { error };
+    }
+  }
+export {executeQuery}

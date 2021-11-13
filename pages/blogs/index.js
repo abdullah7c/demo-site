@@ -1,8 +1,6 @@
 import React from 'react'
-import Blogs from '../../components/Blogs/index'
-import safeJsonStringify from 'safe-json-stringify';
-import { promisePool } from '../../utils/dbTwo';
-
+import Blogs from '/components/Blogs/index'
+import {executeQuery} from '/utils/db'
 
 const blogs = ({data}) => {
     return (
@@ -19,12 +17,13 @@ export async function getStaticProps() {
     let data = []
 
     try {
-      const [row,fields] = await promisePool.query("SELECT * FROM blogdata");
-      const stringifiedData = safeJsonStringify(row)
-       data = JSON.parse(stringifiedData)
-    } catch (error) {
-       
-    }
+      const result = await executeQuery({
+        query: 'SELECT * FROM blogdata',
+      })
+      const res = await JSON.stringify(result)
+      data = await JSON.parse(res)
+    } catch ( error ) { console.log( error );}
+  
 
     if (!data) {
       return {
