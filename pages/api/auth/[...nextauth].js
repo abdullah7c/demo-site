@@ -78,7 +78,7 @@ export default NextAuth({
   },
   secret: "test",
   jwt: {
-    signingKey: 'Dl89-iVEL029EC5BEVmlJUgGm5Hc5Q7cD3BEVVE-x9oZHc52TDteDl893BEV-iVE-x9E-x9E52TDJUg99_ZC5DmlJUgGm9oZ99_25Hc5Qch',
+    signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,
     verificationKey: "oct",
     verificationOptions :   {
         maxTokenAge: `${maxAged}s`, // e.g. `${30 * 24 * 60 * 60}s` = 30 days

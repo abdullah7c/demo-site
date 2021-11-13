@@ -62,11 +62,11 @@ const Main = () => {
       <Container>
         <Row className="justify-content-center my-5 py-5">
           <Col md={5}>
-            <div className="my-5"><Image  src="/home section.jpg" alt="7C-Tech" width={500} height={400} /></div>
+            <div className="my-5"><Image className="my-4" src="/home section.jpg" alt="7C-Tech" width={550} height={500} /></div>
           </Col>
           <Col md={5}>
             <span className="home-text-v1">WHAT IS </span><span className="home-text-v2">7CTECH</span>
-            <p className="home-text-para">7CTECH comprises of experienced and creative designers and web developers. We focus on customer satisfaction
+            <p className="justify-content-center">7CTECH comprises of experienced and creative designers and web developers. We focus on customer satisfaction
                to build a long term work relationship with our clients. As a web company, our prime focus is to offer 
                flawless services over a longer period of time so that our customers can get maximum benefit. Our 
                professionals realize the fact that customer satisfaction is the key to success. Web design, customer care 
