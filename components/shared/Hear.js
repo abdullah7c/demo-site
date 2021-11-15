@@ -10,7 +10,7 @@ const Hear = () => {
                     <Row className="justify-content-center">
                     <Col className="mx-5" xs="auto" md="auto"><Image  src="/logo.png" alt="User" width={180} height={55} /></Col>
                     <Col className="mx-5 my-3" xs="auto" md="auto"><div className="white">WE&apos;D LOVE TO HEAR FROM YOU</div></Col>
-                    <Col className="mx-5 my-2" xs="auto" md="auto"><button className="btn-custom text-center">TALK TO US</button></Col>
+                    <Col className="mx-5 my-2" xs="auto" md="auto"><button className="btn-custom text-center" onClick={()=>window.scrollTo(0,5000,{behavior: 'auto'})}>TALK TO US</button></Col>
                     </Row>
                 </Container>
             </div>

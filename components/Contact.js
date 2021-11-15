@@ -7,7 +7,7 @@ import { faArrowCircleDown } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import Map from './shared/Map'
 import Hear from '../components/shared/Hear'
-
+import {Link} from 'react-scroll'
 import emailjs from 'emailjs-com'
 import aos from 'aos'
 import 'aos/dist/aos.css'
@@ -140,9 +140,9 @@ const Contact = () => {
                                 <Image  src="/user.png" alt="User" width={60} height={60} />
                             </Col>
                             <Col>
-                                <div><h4>Naveed Ahmed Javed</h4>
-                                <p>CEO</p>
-                                <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> naveed@7ctech.com</a>
+                                <div><h4>Obaid Nizami</h4>
+                                    <p>PMO</p>
+                                    <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> obaid@7ctech.com</a>
                                 </div>
                             </Col>
                             </Row>
@@ -153,9 +153,9 @@ const Contact = () => {
                                 <Image  src="/user.png" alt="User" width={60} height={60} />
                             </Col>
                             <Col>
-                                <div><h4>Naveed Ahmed Javed</h4>
-                                <p>CEO</p>
-                                <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> naveed@7ctech.com</a>
+                                <div><h4>Mohi uddin</h4>
+                                <p>Team Lead</p>
+                                <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> mohiudeen@7ctech.com</a>
                                 </div>
                             </Col>
                             </Row>
@@ -166,9 +166,9 @@ const Contact = () => {
                                 <Image  src="/user.png" alt="User" width={60} height={60} />
                             </Col>
                             <Col>
-                                <div><h4>Naveed Ahmed Javed</h4>
-                                <p>CEO</p>
-                                <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> naveed@7ctech.com</a>
+                            <div><h4>Faheem</h4>
+                                <p>Head of SQA</p>
+                                <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> fahim@7ctech.com</a>
                                 </div>
                             </Col>
                             </Row>
@@ -372,7 +372,16 @@ const Contact = () => {
                 <p className="text-center white-small mt-3 mb-3 ">  Let’s build something incredible together! </p>
                 <p className="text-center white-small mt-3 mb-3 " >   Share your business ideas or needs with us and give us a chance to scale and transform your business with the best possible solutions and incredible services. </p>
 
-                <button className="vid_div_write_btn my-3 mx-5" > SUBMIT </button> <button className="vid_div_write_btn my-3 mx-5" > WRITE US TODAY</button>
+                <button className="vid_div_write_btn my-3 mx-5" 
+                    onClick={()=>window.scrollTo(0,6560,{behavior: 'auto'})}
+                > 
+                    SUBMIT 
+                </button>
+                <button className="vid_div_write_btn my-3 mx-5" 
+                     onClick={()=>window.scrollTo(0,0,{behavior: 'auto'})}
+                > 
+                    WRITE US TODAY
+                </button>
                 
             </div>
 

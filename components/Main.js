@@ -150,11 +150,11 @@ const Main = () => {
           <Col className="text-center service" md={3}>
             <FontAwesomeIcon className="my-2" style={{color:"#ffba43",fontSize:"23px"}} icon={faMobileAlt}/>
               <div className="heading my-2">MOBILE APP<br/> DEVELOPMENT</div>
-              <div className="content my-1">We Offer Customized E-Commerce services along with development in magento, WooCommerce..</div>
+              <div className="content my-1">Mastering the art of creating mobile applications that offer services on responsive and native development..</div>
           </Col>
           <Col className="text-center service" md={3}>
             <FontAwesomeIcon className="my-2" style={{color:"#ffba43",fontSize:"23px"}} icon={faSearchPlus}/>
-              <div className="heading my-2">MOBILE APP<br/> DEVELOPMENT</div>
+              <div className="heading my-2">WEB<br/>SCRAPPING</div>
               <div className="content my-1">Data mining systems, text mining solutions, big data Analysis, API Integrations and more..</div>
           </Col>
         </Row>

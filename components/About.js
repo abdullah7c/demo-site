@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuoteRight,faCheckCircle,faCodeBranch,faListUl,faUserCheck,faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Map from './shared/Map'
 import Hear from './shared/Hear'
+import Link from 'next/link'
 
 const About = () => {
 return (
@@ -81,7 +82,11 @@ return (
                     <p className="service-desc my-3">
                         .NET core is the next big thing after the release of revolutionary .NET and .NET 2.0. 7CTECH
                         has been working and developing solutions using Microsoft .NET core technologies.</p>
-                    <button className="service-btn px-5 py-2">MORE DETAILS</button>
+                    <button className="service-btn px-5 py-2">
+                        <Link href={{pathname: `/services`,query: {index: 'dotnet',},}}>
+                            <a style={{textDecoration:"none",color:"white"}}>MORE DETAILS</a>
+                        </Link>
+                    </button>
                 </div>
             </Col>
             <Col md={4}>
@@ -90,7 +95,11 @@ return (
                     <h5 className="service-head my-3">CUSTOMIZED BUSINESS SOLUTIONS</h5>
                     <p className="service-desc my-3 mb-5">
                     If you have a killer idea or a great startup thought lingering around in your mind for a long time?...</p>
-                    <button className="service-btn mt-3 px-5 py-2">MORE DETAILS</button>
+                    <button className="service-btn mt-3 px-5 py-2">
+                        <Link href={{pathname: `/services`,query: {index: 'custom',},}}>
+                            <a style={{textDecoration:"none",color:"white"}}>MORE DETAILS</a>
+                        </Link>
+                    </button>
                 </div>
             </Col>
             <Col md={4}>
@@ -99,7 +108,11 @@ return (
                     <h5 className="service-head my-3">SHOPIFY DEVELOPMENT</h5>
                     <p className="service-desc my-3 mb-5">
                     Shopify is one of the biggest E-Commerce platforms and enablers and one of the best optimized one.</p>
-                    <button className="service-btn mt-3 px-5 py-2">MORE DETAILS</button>
+                    <button className="service-btn mt-3 px-5 py-2">
+                        <Link href={{pathname: `/services`,query: {index: 'shopify',},}}>
+                            <a style={{textDecoration:"none",color:"white"}}>MORE DETAILS</a>
+                        </Link>
+                    </button>
                 </div>
             </Col>
             </Row>
@@ -113,11 +126,11 @@ return (
 
 
     <div>
-    <Container className="py-5 my-5">
+    <Container className="py-5 my-3">
         <Row className="justify-content-center text-center py-5">
             <Col><h3 className="values mb-5" >OUR CORE VALUES</h3></Col>
         </Row>
-        <Row className="justify-content-center mx-1 my-5">
+        <Row className="justify-content-center mx-1 my-1">
             <Col className="center-responsive" md={4}>
                 <Row>
                     <Col md="auto" className="" ><FontAwesomeIcon className=" value-icon my-3" icon={faUserCheck}/></Col>
@@ -145,40 +158,14 @@ return (
                     </Col>
                 </Row>
             </Col>
-          {/*<Col className=" center-responsive" md={4}>
-              <Row>
-                  <Col className="values-back center-responsive"  md="auto"><FontAwesomeIcon className="value-icon my-3 mx-2" icon={faUserCheck}/></Col>
-                  <Col className="" xs="auto" md="auto" >
-                  <h4 className="values-heading my-2">CLIENT SATISFACTION FIRST</h4>
-                  <p>What is the best long term investment? 7CTECH believes that client satisfaction is the best form of long term investment.</p>
-                  </Col>
-              </Row>
-          </Col>
-           <Col className=" center-responsive" md={4}>
-              <Row>
-                  <Col className="values-back center-responsive"  md="auto" ><FontAwesomeIcon className="value-icon my-4 mx-3" icon={faCodeBranch}/></Col>
-                  <Col className="" xs="auto" md="auto" >
-                  <h4 className="values-heading my-2">INNOVATION AND INTELLECT</h4>
-                  <p>Technology is advancing day by day and it requires both, innovation and intellect to compete in the global market.</p>
-                  </Col>
-              </Row>
-          </Col>
-          <Col className=" center-responsive" md={4}>
-              <Row>
-                  <Col className="values-back center-responsive" xs={12} md="auto" ><FontAwesomeIcon className="value-icon my-4 mx-2" icon={faListUl}/></Col>
-                  <Col className="" xs="auto" md="auto" >
-                  <h4 className="values-heading my-2">CORE VALUES OF INTEGRITY</h4>
-                  <p>Our professionals realize the fact that business ethics and moral values determine the goodwill of any professional organization..</p>
-                  </Col>
-              </Row>
-          </Col> */}
+          
           
         </Row>
       </Container>  
     </div>
 
     <div className="">
-        <Container className="py-5">
+        <Container className="py-1">
             <Row className="justify-content-center my-5 py-3 text-center">
             <Col><h1 className="black-dark-large">CONNECT WITH<span className="blue-dark"> OUR TEAM </span></h1></Col>
             </Row>
@@ -205,9 +192,9 @@ return (
                         <Image  src="/user.png" alt="User" width={70} height={70} />
                     </Col>
                     <Col>
-                        <div><h4>Naveed Ahmed Javed</h4>
-                        <p>CEO</p>
-                        <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> naveed@7ctech.com</a>
+                        <div><h4>Obaid Nizami</h4>
+                        <p>PMO</p>
+                        <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> obaid@7ctech.com</a>
                         </div>
                     </Col>
                     </Row>
@@ -220,9 +207,9 @@ return (
                         <Image  src="/user.png" alt="User" width={70} height={70} />
                     </Col>
                     <Col>
-                        <div><h4>Naveed Ahmed Javed</h4>
-                        <p>CEO</p>
-                        <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> naveed@7ctech.com</a>
+                        <div><h4>Mohi uddin</h4>
+                        <p>Team Lead</p>
+                        <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> mohiudeen@7ctech.com</a>
                         </div>
                     </Col>
                     </Row>
@@ -235,9 +222,9 @@ return (
                         <Image  src="/user.png" alt="User" width={70} height={70} />
                     </Col>
                     <Col>
-                        <div><h4>Naveed Ahmed Javed</h4>
-                        <p>CEO</p>
-                        <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> naveed@7ctech.com</a>
+                        <div><h4>Faheem</h4>
+                        <p>Head of SQA</p>
+                        <a className="mail" href=""><FontAwesomeIcon className="" icon={faEnvelope}/> fahim@7ctech.com</a>
                         </div>
                     </Col>
                     </Row>

@@ -8,11 +8,8 @@ import { faMapMarkerAlt,faCheckCircle} from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF,faTwitter,faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import Link from 'next/link'
 
-import Router from 'next/router'
 
 import emailjs from 'emailjs-com'
-import aos from 'aos'
-import 'aos/dist/aos.css'
 
 const Footer = () => {
 
@@ -76,7 +73,7 @@ const Footer = () => {
                 }
             </Col>
             <Col className="" md={3}>
-            <div className="footer-white-light middle mt-5">EMAIL US</div>
+            <div id="email" className="footer-white-light middle mt-5">EMAIL US</div>
                 <Row className="middle">
                 <Col>
                     {
@@ -144,9 +141,9 @@ const Footer = () => {
                     
                 </Col>
                 <Col xs={12} md={2} className="my-2 middle">
-                    <span className="mx-2"><Link href="/"><a><FontAwesomeIcon style={{color:"rgb(66, 103, 178)",fontSize:"20px"}} icon={faFacebookF} /></a></Link></span>
-                    <span className="mx-2"><Link href="/"><a><FontAwesomeIcon style={{color:"rgb(0, 178, 255)",fontSize:"23px"}} icon={faLinkedinIn} /></a></Link></span>
-                    <span className="mx-2"><Link href="/"><a><FontAwesomeIcon style={{color:"rgb(0, 178, 255)",fontSize:"20px"}} icon={faTwitter} /></a></Link></span>
+                    <span className="mx-2"><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon style={{color:"rgb(66, 103, 178)",fontSize:"20px"}} icon={faFacebookF} /></a></span>
+                    <span className="mx-2"><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon style={{color:"rgb(0, 178, 255)",fontSize:"23px"}} icon={faLinkedinIn} /></a></span>
+                    <span className="mx-2"><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon style={{color:"rgb(0, 178, 255)",fontSize:"20px"}} icon={faTwitter} /></a></span>
                 </Col>
             </Row>
             </Container>

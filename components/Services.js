@@ -4,19 +4,26 @@ import {Container,Row,Col,Card,Button,Tabs,Tab} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle} from '@fortawesome/free-solid-svg-icons'
 import {Link} from 'react-scroll'
-import  {useRouter}  from 'next/router'
+import { useRouter } from 'next/router'
 import Hear from '../components/shared/Hear'
 
 const Services = ({servicesData}) => {
 
-    
-    const  index  = ''
+    const router = useRouter()
+    const { index } = router.query
 
+
+    //const index = ' '
     useEffect(() => {
+        console.log(window.innerWidth)
         let val = ' '
         val = index
-        if(val){
+        if(val && window.innerWidth > 500){
             window.scrollTo(0,2560,{ 
+                behavior: 'auto'
+              }); 
+        }else if(val && window.innerWidth < 500){
+            window.scrollTo(0,6390,{ 
                 behavior: 'auto'
               }); 
         }
