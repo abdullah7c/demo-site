@@ -141,9 +141,9 @@ const Footer = () => {
                     
                 </Col>
                 <Col xs={12} md={2} className="my-2 middle">
-                    <span className="mx-2"><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon style={{color:"rgb(66, 103, 178)",fontSize:"20px"}} icon={faFacebookF} /></a></span>
-                    <span className="mx-2"><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon style={{color:"rgb(0, 178, 255)",fontSize:"23px"}} icon={faLinkedinIn} /></a></span>
-                    <span className="mx-2"><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon style={{color:"rgb(0, 178, 255)",fontSize:"20px"}} icon={faTwitter} /></a></span>
+                    <span className="mx-2"><a href="https://www.facebook.com/7ctech/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon style={{color:"rgb(66, 103, 178)",fontSize:"20px"}} icon={faFacebookF} /></a></span>
+                    <span className="mx-2"><a href="https://pk.linkedin.com/company/7c-tech" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon style={{color:"rgb(0, 178, 255)",fontSize:"23px"}} icon={faLinkedinIn} /></a></span>
+                    <span className="mx-2"><a href="https://twitter.com/7ctech?lang=en" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon style={{color:"rgb(0, 178, 255)",fontSize:"20px"}} icon={faTwitter} /></a></span>
                 </Col>
             </Row>
             </Container>
