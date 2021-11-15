@@ -1,16 +1,35 @@
-import React,{useState} from 'react'
+import React,{useState, useRef} from 'react'
 import {Container,Row,Col,Form,Button,Tabs,Tab} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt,faPhone,faGlobe,faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkerAlt,faPhone,faGlobe,faEnvelope,faCheckCircle} from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF,faTwitter,faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faArrowCircleDown } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import Map from './shared/Map'
 import Hear from '../components/shared/Hear'
 
+import emailjs from 'emailjs-com'
+import aos from 'aos'
+import 'aos/dist/aos.css'
+
 const Contact = () => {
 
     const [key, setKey] = useState('webdesign');
+    const [sent, setSent] = useState(false)
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_6ravpgv', 'template_lgora9b', form.current, 'user_wV6F2j1wGAcdUkHe7zHTZ')
+          .then((result) => {
+              console.log(result.text);
+              setSent(true)
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
 
     return (
         <div>
@@ -31,23 +50,34 @@ const Contact = () => {
                         <Map />
                     </Col>
                     <Col md={3}>
-                    <Form >
+                    {
+                        sent === false &&
+                        <Form ref={form} onSubmit={sendEmail}>
                         <Form.Group className="mb-4" controlId="formBasicPassword">
-                            <Form.Control className="contact-form" type="text" placeholder="Name *" />
+                            <Form.Control className="contact-form" name="name" type="text" placeholder="Name *" />
                         </Form.Group>
                         <Form.Group className="mb-4" controlId="formBasicEmail">
-                            <Form.Control className="contact-form" type="email" placeholder="Enter Email *" />
+                            <Form.Control className="contact-form" name="email" type="email" placeholder="Enter Email *" />
                         </Form.Group>
                         <Form.Group className="mb-4" controlId="formBasicPassword">
-                            <Form.Control className="contact-form" type="number" placeholder="Your Phone *" />
+                            <Form.Control className="contact-form" name="phone" type="number" placeholder="Your Phone *" />
                         </Form.Group>
                         <Form.Group className="mb-4" controlId="formBasicEmail">
-                            <Form.Control as="textarea" placeholder="Message *" rows={7} />
+                            <Form.Control as="textarea" name="message" placeholder="Message *" rows={7} />
                         </Form.Group>
                         <Button variant="primary" style={{width:"100%"}} type="submit">
                             Submit
                         </Button>
                     </Form>
+                    }
+                    {
+                        sent === true &&
+                        <div data-aos="slide-up">
+                            <FontAwesomeIcon className="my-3" style={{fontSize:"100px",color:"green",marginLeft:"10px"}} icon={faCheckCircle} />
+                            <h5 className="my-2 " style={{marginLeft:"0px", color:"black"}}>Email Sent Successfully!</h5>
+                            <div style={{marginTop:"207px"}}></div>
+                        </div>
+                    }
                     </Col>
                 </Row>
             </Container>

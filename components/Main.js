@@ -1,27 +1,47 @@
-import React,{useContext, useEffect, useState} from 'react'
+import React,{useContext, useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 import {Container,Row,Col,Button,Card,Form} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import { faArrowCircleUp,faBars,faPaintBrush,faCartPlus,faMobileAlt,faSearchPlus,faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
 import Router from 'next/router'
 import {BlogContext} from '/context/BlogContextProvider'
 import ReactHtmlParser from 'react-html-parser';
 import Hear from './shared/Hear'
-
+import emailjs from 'emailjs-com'
+import aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Main = () => {
 
 
     const blogState = useContext(BlogContext)||[]
     const [blogs, setBlogs] = useState([])
+    const [sent, setSent] = useState(false)
 
     useEffect(() => {
       setBlogs(blogState)
+      aos.init()
     }, [blogState])
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_6ravpgv', 'template_lgora9b', form.current, 'user_wV6F2j1wGAcdUkHe7zHTZ')
+        .then((result) => {
+            console.log(result.text);
+            setSent(true)
+        }, (error) => {
+            console.log(error.text);
+        });
+    };
 
     return (
     <div className="home-styles" >
     <div className="hero-image">
+    
       <Container className="space">
       <Row className="justify-content-center">
           <Col className="mt-2 mb-5 pb-3" md="auto">
@@ -251,15 +271,25 @@ const Main = () => {
           </ul>
           </Col>
           <Col className="" md={4}>
-            <Form>
+            {
+              sent === false &&
+              <Form ref={form} onSubmit={sendEmail}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control className="my-4" type="name" placeholder="Name" />
-                <Form.Control className="my-4" type="email" placeholder="Email" />
-                <Form.Control className="my-4" type="name" placeholder="Your Phone" />
-                <Form.Control className="my-4" style={{minHeight:"120px"}}  as="textarea" placeholder="Message" />
+                <Form.Control className="my-4" type="name" name="name" placeholder="Name" />
+                <Form.Control className="my-4" type="email" name="email" placeholder="Email" />
+                <Form.Control className="my-4" type="name" name="phone" placeholder="Your Phone" />
+                <Form.Control className="my-4" name="message" style={{minHeight:"120px"}}  as="textarea" placeholder="Message" />
               </Form.Group>
-              <Button className="home-submit" variant="light">Submit</Button>
+              <Button className="home-submit" type="submit" variant="light">Submit</Button>
             </Form>
+            }
+            {
+              sent === true &&
+              <div data-aos="slide-up"><FontAwesomeIcon style={{fontSize:"150px",color:"green",marginLeft:"150px"}} icon={faCheckCircle} />
+              <h5 className="my-2 " style={{marginLeft:"100px"}}>Email Sent Successfully!</h5>
+              <div style={{marginTop:"207px"}}></div></div>
+            }
+            
           </Col>
         </Row>
       </Container>

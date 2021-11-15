@@ -1,19 +1,38 @@
-import React,{useEffect,useState, useContext} from 'react'
+import React,{ useEffect, useState, useContext, useRef } from 'react'
 import {BlogContext} from '../../context/BlogContextProvider'
 
 import Image from 'next/image'
 import { Container,Row,Col,Form,Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkerAlt,faCheckCircle} from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF,faTwitter,faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import Link from 'next/link'
 
 import Router from 'next/router'
 
+import emailjs from 'emailjs-com'
+import aos from 'aos'
+import 'aos/dist/aos.css'
+
 const Footer = () => {
 
     const blogState = useContext(BlogContext)||[]
     const [blogs, setBlogs] = useState([])
+    const [sent, setSent] = useState(false)
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_6ravpgv', 'template_lgora9b', form.current, 'user_wV6F2j1wGAcdUkHe7zHTZ')
+        .then((result) => {
+            console.log(result.text);
+            setSent(true)
+        }, (error) => {
+            console.log(error.text);
+        });
+    };
 
     useEffect(() => {
       setBlogs(blogState)
@@ -22,9 +41,9 @@ const Footer = () => {
     return (
         <div className="footer-styles">
         <div className="footer py-5">
-        <Container className=" py-5">
+        <Container className="">
             <Row className="justify-content-center middle">
-            <Col className="my-2" md={3}>
+            <Col className="my-2 mt-5" md={3}>
                 <Image  src="/logo.png" alt="blog" width={155} height={50} />
                 <div className="mt-3" style={{color:"rgb(137, 169, 181)",fontSize:"15px"}}>
                 Our prime focus is to offer flawless services over a longer 
@@ -35,7 +54,7 @@ const Footer = () => {
             </Col>
 
             <Col className="middle" md={3} style={{color:"white"}}>
-                <div className="footer-white-light mx-4">RECENT POSTS</div>
+                <div className="footer-white-light mx-4 mt-5">RECENT POSTS</div>
                 <div className="my-5"></div>
                 {
                     blogs.slice(0,3).map((blog,index)=>{
@@ -57,20 +76,31 @@ const Footer = () => {
                 }
             </Col>
             <Col className="" md={3}>
-            <div className="footer-white-light middle">EMAIL US</div>
+            <div className="footer-white-light middle mt-5">EMAIL US</div>
                 <Row className="middle">
                 <Col>
-                    <form className="footer-form mt-5">
-                        <input className="my-3 field" type="text" placeholder="email" />
-                        <input className="my-3 field" type="text" placeholder="phone" />
-                        <input className="my-3 field" type="text" placeholder="email" />
-                        <textarea className="my-3 field" type="text" placeholder="Message" rows="4" cols="50" />
-                    <div className="my-3"><Button style={{width:"250px"}} className="home-submit" variant="light">Submit</Button></div>
-                    </form>
+                    {
+                        sent === false &&
+                        <form ref={form} onSubmit={sendEmail} className="footer-form mt-5">
+                            <input className="my-3 field" type="text" name="name" placeholder="name*" required/>
+                            <input className="my-3 field" type="email"  name="email" placeholder="email*" required/>
+                            <input className="my-3 field" type="text" name="phone"  placeholder="phone*" required/>
+                            <textarea className="my-3 field" type="text" name="message" placeholder="Message*" rows="4" cols="50" required/>
+                            <div className="my-3"><Button style={{width:"250px"}} className="home-submit" type="submit" variant="light">Submit</Button></div>
+                        </form>
+                    }
+                    {
+                        sent === true &&
+                        <div data-aos="slide-up">
+                            <FontAwesomeIcon className="my-3" style={{fontSize:"100px",color:"green",marginLeft:"10px"}} icon={faCheckCircle} />
+                            <h5 className="my-2 " style={{marginLeft:"0px", color:"white"}}>Email Sent Successfully!</h5>
+                            <div style={{marginTop:"207px"}}></div>
+                        </div>
+                    }
                 </Col>
                 </Row>
             </Col>
-            <Col className="" md={3}>
+            <Col className="mt-5" md={3}>
             <div className="footer-white-light">CONTACT US</div>
             <p className="footer-blog-content mt-5"><span><FontAwesomeIcon icon={faMapMarkerAlt} /></span> Address :</p>
             <p className="footer-blog-content">252D, Shahrah-e-Faisal, P.E.C.H.S Block 2 Block 6 PECHS,
